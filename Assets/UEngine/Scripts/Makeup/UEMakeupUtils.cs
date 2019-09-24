@@ -9,7 +9,7 @@ public class UEMakeupUtils{
 
     private static Material s_faceMaterial;
     private static Material s_eyeballMaterial;
-    private static Material s_eyelashMaterial;
+    private static Material s_eyelashMaterial = null;
 
     public static UEMakeupUtils ConstructUEMakeupUtils(Renderer renderer)
     {

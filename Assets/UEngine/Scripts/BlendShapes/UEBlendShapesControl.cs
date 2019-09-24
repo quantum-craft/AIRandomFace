@@ -5,7 +5,7 @@ using UEUtils;
 
 public class UEBlendShapesControl
 {
-    private List<Dictionary<string, UEBlendShapesUtils.AxisPair[]>> m_blendShapesMapList;
+    public List<Dictionary<string, UEBlendShapesUtils.AxisPair[]>> m_blendShapesMapList;
     private List<SkinnedMeshRenderer> m_sMRList;
 
     public UEBlendShapesControl()
