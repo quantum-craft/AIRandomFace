@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: eye
+  m_Shader: {fileID: 4800000, guid: 2c3990fe967a9904981ef7b0f1cd4950, type: 3}
+  m_ShaderKeywords: BRDF_GGX2 EMISSION NORMALMAP SELFSHADOW SPECIBL _EMISSION
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - DEForward1
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseTexture:
+        m_Texture: {fileID: 2800000, guid: 3da0063d15ecdb942aa9c72e6c3bced7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: a385981d78fdf0640a9e4666992cce84, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpTex:
+        m_Texture: {fileID: 2800000, guid: 37c0f793485c3a0479e1e1ad8989ef2e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: f323e24097221b74ea8569f42884b8d8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EnvMapLDR:
+        m_Texture: {fileID: 8900000, guid: 200a6777dcbff5e45af386e3c99ba936, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GGX1LUT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: f323e24097221b74ea8569f42884b8d8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBRMap:
+        m_Texture: {fileID: 2800000, guid: 22668d29c925c6c4183fb4a4a7027ef9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StreamMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _iceAO:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _iceCube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _iceDissolveTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _iceNoise:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _iceTEx:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _irisTexture:
+        m_Texture: {fileID: 2800000, guid: b228d1db570e2554bbba894173afa511, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _pupilTexture:
+        m_Texture: {fileID: 2800000, guid: 4485ebe879b911a4789a6b91e1253809, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _reftex:
+        m_Texture: {fileID: 8900000, guid: 3c11e6f987b2ffd4cb43ef1de67148be, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AOStrength: 1
+    - _BackLightIntensity: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DetailNormalMapScale1: 1
+    - _DetailNormalMapScale2: 1
+    - _DetailNormalMapScale3: 1
+    - _Dissolve: 0
+    - _DstBlend: 0
+    - _EdgeColorScale: 1
+    - _EdgeWidth: 0.1
+    - _Gamma: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.19
+    - _GlossyReflections: 1
+    - _Level: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _Noisetilling: 2.5
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PositionX: 0.5
+    - _PositionY: 0.5
+    - _RimPower: 0.001
+    - _RimXRayIntensity: 10
+    - _RimXRayPower: 3
+    - _SmoothnessTextureChannel: 0
+    - _Spec: 128
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _StreamDisturb: 1
+    - _StreamInten: 1
+    - _StreamPower: 1
+    - _TextureScale: 1
+    - _Theta: 1
+    - _TriplanarBlendSharpness: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    - _iceCubeIntensity: 0.8
+    - _iceMaxThickness: 0.759
+    - _iceMinThickness: 0
+    - _iceNoiseMin: 0
+    - _iceRange: 0
+    - _iceRimPower: 0.5
+    - _iceRoughness: 0.589
+    - _iceSpecPower2: 0.64
+    - _iceSpecValue: 2.11
+    - _iceTextureScale: 1
+    - _iceTilling: 10
+    - _iris: 1
+    - _irisAlpha: 1
+    - _irisScale: 0.85
+    - _irisalpha: 1
+    - _irisbrightness: 0.5
+    - _irissaturation: 1
+    - _irisscale: 2.498
+    - _moveleftright: 0.5
+    - _moveupdown: 0.5
+    - _pupil: 1
+    - _pupilAlpha: 1
+    - _pupilScale: 0.7
+    - _pupilalpha: 1
+    - _pupilbrightness: 0.5
+    - _pupilsaturation: 1
+    - _pupilscale: 3.784
+    - _reflectalpha: 0.5
+    m_Colors:
+    - _AmbientColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 0.9716981, g: 0.9029459, b: 0.9669926, a: 1}
+    - _DissolveControl: {r: 1, g: 1, b: 0, a: 0}
+    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0.8757565, g: 0.8897888, b: 0.9056604, a: 1}
+    - _IBLColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 0}
+    - _RimXRayColor: {r: 0, g: 0, b: 1, a: 1}
+    - _StreamCol: {r: 1, g: 1, b: 1, a: 0}
+    - _StreamDirTile: {r: 0, g: -1, b: 1, a: 1}
+    - _iceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _iceRimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _irisStartUV: {r: -0, g: 0, b: 0, a: 0}
+    - _irisTexInfo: {r: 3, g: 3, b: 1, a: 1}
+    - _irisUVDir: {r: 1, g: 0, b: 0, a: 1}
+    - _iriscol: {r: 1, g: 1, b: 1, a: 1}
+    - _pupilStartUV: {r: 0, g: 0, b: 0, a: 0}
+    - _pupilTexInfo: {r: 3, g: 3, b: 1, a: 1}
+    - _pupilUVDir: {r: 1, g: 0, b: 0, a: 1}
+    - _pupilcol: {r: 0, g: 0, b: 0, a: 1}
+    - _specColor1: {r: 1, g: 1, b: 1, a: 1}
+    - _specColor2: {r: 1, g: 1, b: 1, a: 1}
+    - _speccol: {r: 1, g: 1, b: 1, a: 1}

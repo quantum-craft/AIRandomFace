@@ -1,0 +1,247 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: face_male
+  m_Shader: {fileID: 4800000, guid: 2bb55ae3a730dd24db11685c998161d2, type: 3}
+  m_ShaderKeywords: BRDF_GGX2 EMISSION NORMALMAP SELFSHADOW _EMISSION _EYEBROW_1_ON
+    _LIPNORMAL_2_ON _LODLEVEL_LOD0 _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - DEForward1
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DetailNormal:
+        m_Texture: {fileID: 2800000, guid: 11c691490174347489400454da63e4dd, type: 3}
+        m_Scale: {x: 7, y: 7}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse:
+        m_Texture: {fileID: 2800000, guid: b890450a886fea841b9989ab56f2d866, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse1:
+        m_Texture: {fileID: 2800000, guid: 98172078f2441484983d36ae3db4f85a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse2:
+        m_Texture: {fileID: 2800000, guid: b8b50434f6c77a543a544b46474da00c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LookUpMap:
+        m_Texture: {fileID: 2800000, guid: 97710c04d3bd8f640bc71dece14783df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: ca8068cfc9b41bc4ea16abbe415bef1f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaterialTex:
+        m_Texture: {fileID: 2800000, guid: 83fba61a44b29704f9fe0f936ae109b9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: cbbef5ec25297df4e89d03b601f71924, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _areaMask:
+        m_Texture: {fileID: 2800000, guid: 5930220b47367e749b9e78959a4f1eb1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _blusherTex:
+        m_Texture: {fileID: 2800000, guid: 1d441a17b733dae4c9f8db3f33c819a9, type: 3}
+        m_Scale: {x: 374, y: 460}
+        m_Offset: {x: 1, y: 2}
+    - _eyebrowTex:
+        m_Texture: {fileID: 2800000, guid: 9b50710cca445a6429878c8c41b92964, type: 3}
+        m_Scale: {x: 500, y: 138}
+        m_Offset: {x: 2, y: 2}
+    - _eyelineTex:
+        m_Texture: {fileID: 2800000, guid: b70cfc21c11cd384ba169fe981564eab, type: 3}
+        m_Scale: {x: 256, y: 140}
+        m_Offset: {x: 1, y: 2}
+    - _eyeshadowTex:
+        m_Texture: {fileID: 2800000, guid: 2fe605e56fc7fbc47bc344fc0fce44e2, type: 3}
+        m_Scale: {x: 532, y: 188}
+        m_Offset: {x: 2, y: 2}
+    - _lipNormalMap:
+        m_Texture: {fileID: 2800000, guid: ffeca59072abc0e46b87ae75fcf5bb1a, type: 3}
+        m_Scale: {x: 268, y: 168}
+        m_Offset: {x: 2, y: 2}
+    - _lipTex:
+        m_Texture: {fileID: 2800000, guid: 3b0c90c6549e92c47b40668e9992f75d, type: 3}
+        m_Scale: {x: 268, y: 168}
+        m_Offset: {x: 2, y: 2}
+    - _makeupmask:
+        m_Texture: {fileID: 2800000, guid: 4703d02c75f0da04dbc5b13e9339f328, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _mustacheTex:
+        m_Texture: {fileID: 2800000, guid: 6e22a81e64c4cf440aec3d38b4cef441, type: 3}
+        m_Scale: {x: 832, y: 484}
+        m_Offset: {x: 2, y: 2}
+    - _reftex:
+        m_Texture: {fileID: 8900000, guid: 270f7b3b14ca9d8438041145e2da43cb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _s_Mask:
+        m_Texture: {fileID: 2800000, guid: d4460c9c716350b4db72610774a502af, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _wrinkleMask:
+        m_Texture: {fileID: 2800000, guid: 8a02e3527c7ef2b4f9301bd948c9674f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _wrinkleNormalMap:
+        m_Texture: {fileID: 2800000, guid: 1695a9ab775c1954aa60d5b82f02ebcc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _029: -0.47
+    - _03: -0.2
+    - _CurvatureScale: 0.33
+    - _Cutoff: 0.5
+    - _DetailNormalStrength: 1
+    - _DetailNormal_AddStrength: 0.5
+    - _DiffuseScale: 0.85
+    - _DstBlend: 0
+    - _Factor: 0.5
+    - _Frequence: 0.2
+    - _LODLeveL: 0
+    - _OutLineAlpha: 1
+    - _RimLightRate: 4
+    - _RimLightScale: 0.1
+    - _SkinContrast: 0.35
+    - _SmoothnessScale: 1
+    - _SmoothnessScaleView: 1
+    - _SpecularScale: 1
+    - _SpecularScaleView: 1
+    - _SrcBlend: 1
+    - _WindEdgeFlutter: 1
+    - _ZWrite: 1
+    - _areaAlpha: 1
+    - _areaID: 17.7
+    - _areaIDb: 0
+    - _areaIDg: 0
+    - _areaIDr: 0
+    - _blusher: 0
+    - _blusheralpha: 0.5
+    - _blusherarea: 0.5
+    - _eyebrow: 1
+    - _eyebrow_1: 1
+    - _eyebrow_2: 0
+    - _eyebrow_3: 0
+    - _eyebrow_4: 0
+    - _eyebrowalpha: 1
+    - _eyeline: 0
+    - _eyeline_1: 0
+    - _eyeline_2: 0
+    - _eyeline_3: 0
+    - _eyeline_4: 0
+    - _eyeshadow: 0
+    - _eyeshadow1: 0
+    - _eyeshadow2: 0
+    - _eyeshadow3: 0
+    - _eyeshadow4: 0
+    - _eyeshadow5: 0
+    - _eyeshadow6: 0
+    - _eyeshadow_1: 0
+    - _eyeshadow_2: 0
+    - _eyeshadow_3: 0
+    - _eyeshadow_4: 0
+    - _eyeshadow_5: 0
+    - _eyeshadow_6: 0
+    - _eyeshadowalpha: 0.8
+    - _eyeshadowarea: 0.5
+    - _eyeshadowrefpow: 10
+    - _eyeshadowroughness: 0.5
+    - _eyeshadowshine: 0.5
+    - _eyeshadowsmoothness: 3
+    - _fishtaillinespow: 0
+    - _lightmapOffset: 0
+    - _lightpow: 0.25
+    - _lip: 0
+    - _lip_1: 0
+    - _lip_2: 0
+    - _lip_3: 0
+    - _lip_4: 0
+    - _lipalpha: 0.8
+    - _liparea: 0.5
+    - _lipnormal: 0
+    - _lipnormal_1: 0
+    - _lipnormal_2: 1
+    - _lipnormal_3: 0
+    - _lipnormal_4: 0
+    - _liproughness: 0.5
+    - _mustache: 0
+    - _mustachealpha: 1
+    - _nasolabialfoldspow: 0
+    - _raisedlinespow: 0
+    - _specular1_strength: 1
+    - _test: 1
+    - _test1: 0.28
+    - _testw: 1
+    - _testx: 0
+    - _testy: 0
+    - _testz: 0
+    - _v_customizeData_0: 1
+    - _v_rimLightRate: 1
+    - _v_rimLightScale: 1
+    m_Colors:
+    - _AmbientColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _OutLineColor: {r: 1, g: 0, b: 0, a: 1}
+    - _ReflectlightColor: {r: 0.40392157, g: 0.27450982, b: 0.20784314, a: 1}
+    - _SceneLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UVcenter: {r: 0, g: 0, b: 0, a: 0}
+    - _blusherCol: {r: 1, g: 0, b: 1, a: 1}
+    - _blusherTexInfo: {r: 1704, g: 906, b: 2, a: 2}
+    - _blusherUV: {r: 18.5, g: 30.5, b: 0, a: 0}
+    - _eyebrowCol: {r: 0, g: 0, b: 0, a: 1}
+    - _eyebrowTexInfo: {r: 1112, g: 234, b: 2, a: 2}
+    - _eyebrowUV: {r: 53.5, g: 383.8, b: 0, a: 0}
+    - _eyelineCol: {r: 0, g: 0, b: 0, a: 1}
+    - _eyelineTexInfo: {r: 1140, g: 470, b: 2, a: 2}
+    - _eyelineUV: {r: 49.8, g: 350.3, b: 0, a: 0}
+    - _eyelinecol: {r: 1, g: 0, b: 0.19200516, a: 1}
+    - _eyeshadowCol: {r: 0, g: 0, b: 0, a: 1}
+    - _eyeshadowCol1: {r: 1, g: 0, b: 0, a: 1}
+    - _eyeshadowTexInfo: {r: 1140, g: 705, b: 2, a: 3}
+    - _eyeshadowUV: {r: 45.8, g: 241.2, b: 0, a: 0}
+    - _highLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _lipCol: {r: 1, g: 0, b: 0, a: 1}
+    - _lipTexInfo: {r: 652, g: 374, b: 2, a: 2}
+    - _lipUV: {r: 142.3, g: 133.3, b: 0, a: 0}
+    - _lipnormalTexInfo: {r: 652, g: 374, b: 2, a: 2}
+    - _lipnormalUV: {r: 142.3, g: 133.3, b: 0, a: 0}
+    - _mustacheCol: {r: 0, g: 0, b: 0, a: 1}
+    - _mustacheTexInfo: {r: 1672, g: 912, b: 2, a: 2}
+    - _mustacheUV: {r: 11.7, g: 18.54, b: 0, a: 0}
+    - _resolution: {r: 512, g: 512, b: 0, a: 0}
+    - _resolution1: {r: 1024, g: 1024, b: 1140, a: 470}
+    - _resolution2: {r: 1024, g: 1024, b: 657, a: 374}
+    - _resolutioneyebrow: {r: 1024, g: 1024, b: 1112, a: 234}
+    - _resolutioneyeline: {r: 1024, g: 1024, b: 1140, a: 470}
+    - _resolutioneyeshadow: {r: 1024, g: 1024, b: 1140, a: 705}
+    - _resolutionlip: {r: 1024, g: 1024, b: 657, a: 374}
+    - _rowcolumn: {r: 2, g: 3, b: 0, a: 0}
+    - _skinCol: {r: 1, g: 1, b: 1, a: 1}
+    - _v_customizeData_0: {r: 0, g: 0, b: 0, a: 0.3}
+    - _v_customizeData_1: {r: 2, g: 2, b: 4, a: 0.5}
+    - _v_customizeData_2: {r: 2, g: 2, b: 2, a: 1.54}
+    - _v_customizeData_3: {r: 7.72, g: 2, b: 2, a: 2}
+    - _v_customizeData_4: {r: 1.74, g: 2, b: 2, a: 2}
+    - _v_customizeData_5: {r: 3.73, g: 1, b: 0, a: 0.5}
+    - _v_customizeData_6: {r: 1.83, g: 0.94, b: 0.5, a: 0}
+    - _v_rimLightColor: {r: 0.41509432, g: 0.11492633, b: 0, a: 1}

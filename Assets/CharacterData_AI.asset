@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18cb0b5fae41a947a17b72df337fe23, type: 3}
+  m_Name: CharacterData_AI
+  m_EditorClassIdentifier: 
+  m_MakeupDataList:
+  - m_TypeName: skincolor
+    m_BodyPartName: mesh_role_male_casual_02_face_lod0
+    m_MaterialIndex: 0
+    m_ReplaceTextureName: _Diffuse
+    m_Mode: 0
+    m_BlendMaterial: {fileID: 2100000, guid: a17ef17c228b1134dbfbb1747c4ebb08, type: 2}
+    m_SpriteAtlas: {fileID: 4343727234628468602, guid: 0b9d1624a4dc65344a290ce4d7a49392,
+      type: 2}
+    m_StringData:
+    - default
+    - male_base_dif 2
+    - male_base_dif 2
+    m_TextureData: []
+    m_BatchedMaterial: {fileID: 0}
+  - m_TypeName: tattoo
+    m_BodyPartName: mesh_role_male_casual_02_face_lod0
+    m_MaterialIndex: 0
+    m_ReplaceTextureName: _Diffuse
+    m_Mode: 0
+    m_BlendMaterial: {fileID: 2100000, guid: 184b57f227504e24dbbbd0786e844f77, type: 2}
+    m_SpriteAtlas: {fileID: 4343727234628468602, guid: f121c0eae67f5d84c894ee6ba9c37633,
+      type: 2}
+    m_StringData:
+    - default
+    - Tattoo1
+    - Tattoo2
+    - Tattoo3
+    - Tattoo4
+    m_TextureData: []
+    m_BatchedMaterial: {fileID: 0}
+  - m_TypeName: blusher
+    m_BodyPartName: mesh_role_male_casual_02_face_lod0
+    m_MaterialIndex: 0
+    m_ReplaceTextureName: _Diffuse
+    m_Mode: 0
+    m_BlendMaterial: {fileID: 2100000, guid: a7ba596bb09d7e0479ff50438b81b45c, type: 2}
+    m_SpriteAtlas: {fileID: 4343727234628468602, guid: f8dc0bcb9c7135c41b315a6e10ce2dd2,
+      type: 2}
+    m_StringData:
+    - default
+    - blusher1
+    - blusher2
+    m_TextureData: []
+    m_BatchedMaterial: {fileID: 0}
+  - m_TypeName: iris
+    m_BodyPartName: mesh_role_male_casual_02_face_lod0
+    m_MaterialIndex: 1
+    m_ReplaceTextureName: _irisTexture
+    m_Mode: 1
+    m_BlendMaterial: {fileID: 0}
+    m_SpriteAtlas: {fileID: 0}
+    m_StringData: []
+    m_TextureData:
+    - {fileID: 2800000, guid: dc344bec9b5b0594299cca6532d5960f, type: 3}
+    - {fileID: 2800000, guid: d8f84151e75e13e4cb49f6158c0a39b6, type: 3}
+    - {fileID: 2800000, guid: b228d1db570e2554bbba894173afa511, type: 3}
+    - {fileID: 2800000, guid: 963952dbecf826944ac6ba87d20c9293, type: 3}
+    - {fileID: 2800000, guid: a474c9c69ca13564286d3b7713892a1d, type: 3}
+    - {fileID: 2800000, guid: 84fe52d7b75f34b448bdf2700d503829, type: 3}
+    - {fileID: 2800000, guid: ca5d093d9f2d37449a4db89350bc2cdd, type: 3}
+    - {fileID: 2800000, guid: 9642f991fec0e264981dd2fee8f1d7ee, type: 3}
+    - {fileID: 2800000, guid: abf0f8e4ad4662545bf503dd23cbbbaf, type: 3}
+    - {fileID: 2800000, guid: 3fe81056936f62d43ad5ee2790081c6a, type: 3}
+    m_BatchedMaterial: {fileID: 0}
+  - m_TypeName: pupil
+    m_BodyPartName: mesh_role_male_casual_02_face_lod0
+    m_MaterialIndex: 1
+    m_ReplaceTextureName: _pupilTexture
+    m_Mode: 1
+    m_BlendMaterial: {fileID: 0}
+    m_SpriteAtlas: {fileID: 0}
+    m_StringData: []
+    m_TextureData:
+    - {fileID: 2800000, guid: dc344bec9b5b0594299cca6532d5960f, type: 3}
+    - {fileID: 2800000, guid: 4485ebe879b911a4789a6b91e1253809, type: 3}
+    - {fileID: 2800000, guid: 2d5a98da9171dca48882567fe6b82c67, type: 3}
+    - {fileID: 2800000, guid: 519a6d32d401fcd4caf2233b0d3bda53, type: 3}
+    - {fileID: 2800000, guid: 15aee6e091da0c74d9f611e05ca8a541, type: 3}
+    - {fileID: 2800000, guid: fec0be066bcfa4e4bb0ae0da4a9dced9, type: 3}
+    - {fileID: 2800000, guid: e37f74abd241dd344b1b560830660bf1, type: 3}
+    - {fileID: 2800000, guid: 6268773eacb46c34d9dedcb802f9a2d4, type: 3}
+    - {fileID: 2800000, guid: 4826fa27a4579a14e8d44e878a8d17ff, type: 3}
+    - {fileID: 2800000, guid: 097d397447870f34aa93bf72f0438493, type: 3}
+    m_BatchedMaterial: {fileID: 0}
+  - m_TypeName: eyebrow
+    m_BodyPartName: mesh_role_male_casual_02_face_lod0
+    m_MaterialIndex: 0
+    m_ReplaceTextureName: _Diffuse
+    m_Mode: 0
+    m_BlendMaterial: {fileID: 2100000, guid: 7ec94152d44ca7f4a9e42aae9793e06f, type: 2}
+    m_SpriteAtlas: {fileID: 4343727234628468602, guid: 7c67cf6d13065864f93f4861b4b7a5c2,
+      type: 2}
+    m_StringData:
+    - default
+    - eyebrow1
+    - eyebrow2
+    - eyebrow3
+    - eyebrow4
+    m_TextureData: []
+    m_BatchedMaterial: {fileID: 0}
+  - m_TypeName: eyeshadow_color
+    m_BodyPartName: mesh_role_male_casual_02_face_lod0
+    m_MaterialIndex: 0
+    m_ReplaceTextureName: _Diffuse
+    m_Mode: 0
+    m_BlendMaterial: {fileID: 2100000, guid: 19e3e98173082084daf379ddd14e7b96, type: 2}
+    m_SpriteAtlas: {fileID: 4343727234628468602, guid: e6c16a969d0145544a02cd7113cc6f2d,
+      type: 2}
+    m_StringData:
+    - default
+    - eyeshadow1
+    - eyeshadow2
+    - eyeshadow3
+    - eyeshadow4
+    m_TextureData: []
+    m_BatchedMaterial: {fileID: 0}
