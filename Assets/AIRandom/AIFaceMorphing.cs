@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
 using UEUtils;
+using UnityEngine.UI;
 
 struct BlendShapeData
 {
@@ -18,8 +19,13 @@ public class AIFaceMorphing : MonoBehaviour
     public SkinnedMeshRenderer m_FaceSMR;
     public int m_BlendShapeCount;
     public RenderTexture m_AIFaceTexture;
+    public Text m_Message;
 
-    private int m_currentEyeBrow = 1;
+    [Space(10)]
+    public string m_SaveFolderName = "AI_Data";
+    public string m_LoadFolderName = "AI_Data_Load";
+
+    private int m_currentEyeBrow = 3;
 
     private void Awake()
     {
@@ -48,8 +54,54 @@ public class AIFaceMorphing : MonoBehaviour
         bytes = tex.EncodeToJPG();
         // bytes = tex.EncodeToPNG();
 
-        string path = Application.persistentDataPath + "/AI_Data/" + fileName + ".jpg";
+        string path = Application.persistentDataPath + "/" + m_SaveFolderName + "/" + fileName + ".jpg";
         System.IO.File.WriteAllBytes(path, bytes);
+    }
+
+    public void LoadJson2Part(string fileName)
+    {
+        string filePath = Application.persistentDataPath + "/" + m_LoadFolderName + "/" + fileName + ".json";
+
+        if (File.Exists(filePath))
+        {
+            var bytes = File.ReadAllBytes(filePath);
+            string dataAsJson = System.Text.Encoding.UTF8.GetString(bytes);
+            var data = JsonUtility.FromJson<BlendShapeData>(dataAsJson);
+
+            if (data.Names.Length != data.Values.Length)
+            {
+                m_Message.text = fileName + ".json is mal-formatted";
+                return;
+            }
+
+            ResetBlendShape();
+
+            var characterLoader = GetComponent<UECharacterLoader>();
+            for (int i = 0; i < data.Names.Length; i++)
+            {
+                var part = UEBlendShapesUtils.BlendShape.KeyToPart(data.Names[i]);
+                var operation = UEBlendShapesUtils.BlendShape.KeyToOperation(data.Names[i]);
+                var axis = UEBlendShapesUtils.BlendShape.KeyToAxis(data.Names[i]);
+
+                var set = characterLoader.BlendShapesController.SetValue(
+                    part,
+                    operation,
+                    axis,
+                    data.Values[i]);
+
+                if (!set)
+                {
+                    m_Message.text = data.Names[i] + " is not set";
+                    return;
+                }
+            }
+
+            m_Message.text = fileName + ".json is loaded";
+        }
+        else
+        {
+            m_Message.text = fileName + ".json doesn't exit.";
+        }
     }
 
     public void SavePart2Json(string fileName)
@@ -124,7 +176,7 @@ public class AIFaceMorphing : MonoBehaviour
 
         string jsonData = JsonUtility.ToJson(data, true);
 
-        string path = Application.persistentDataPath + "/AI_Data/" + fileName + ".json";
+        string path = Application.persistentDataPath + "/" + m_SaveFolderName + "/" + fileName + ".json";
 
         var bytes = System.Text.Encoding.UTF8.GetBytes(jsonData);
         File.WriteAllBytes(path, bytes);
@@ -236,79 +288,3 @@ public class AIFaceMorphing : MonoBehaviour
         characterLoader.MakeupSystem.SetTextureState("eyebrow", m_currentEyeBrow);
     }
 }
-
-//public void SaveBlendShape2Json(string fileName)
-//{
-//    var data = new BlendShapeData
-//    {
-//        ShapeName = fileName,
-//        Values = new float[m_BlendShapeCount],
-//        Names = new string[m_BlendShapeCount]
-//    };
-
-//    for (int i = 0; i < m_BlendShapeCount; i++)
-//    {
-//        data.Values[i] = m_FaceSMR.GetBlendShapeWeight(i);
-//        data.Names[i] = m_FaceSMR.sharedMesh.GetBlendShapeName(i).Split('.')[1];
-//    }
-
-//    string jsonData = JsonUtility.ToJson(data, true);
-
-//    string path = Application.persistentDataPath + "/AI_Data/" + fileName + ".json";
-
-//    var bytes = System.Text.Encoding.UTF8.GetBytes(jsonData);
-//    File.WriteAllBytes(path, bytes);
-//}
-
-//public void RandomizedBlendShape()
-//{
-//    ResetBlendShape();
-
-//    int randomCount = rnd.Next(0, m_BlendShapeCount + 1);
-
-//    for (int i = 0; i < randomCount; i++)
-//    {
-//        int r = rnd.Next(m_BlendShapeCount);
-//        int v = rnd.Next(0, 101);
-
-//        var name = m_FaceSMR.sharedMesh.GetBlendShapeName(r).Split('.')[1];
-
-//        if (name.Contains("tone"))
-//        {
-//            i = i - 1;
-//            continue;
-//        }
-
-//        m_FaceSMR.SetBlendShapeWeight(r, v);
-//    }
-//}
-
-//private IEnumerator recording(int count)
-//{
-//    for (int i = 0; i < count; i++)
-//    {
-//        if (i == 0)
-//        {
-//            ResetBlendShape();
-
-//            yield return 0; // save files in next frame
-
-//            SaveTex2File("face_" + i);
-//            SaveBlendShape2Json("face_" + i);
-//        }
-//        else
-//        {
-//            RandomizedBlendShape();
-
-//            yield return 0; // save files in next frame
-
-//            SaveTex2File("face_" + i);
-//            SaveBlendShape2Json("face_" + i);
-//        }
-//    }
-//}
-
-//public void StartRecording(int count)
-//{
-//    StartCoroutine(recording(count));
-//}

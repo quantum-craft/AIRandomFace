@@ -198,6 +198,18 @@ namespace UEUtils
                 string[] subStrings = key.Split(' ');
                 return ParseOperation(subStrings[1]);
             }
+
+            public static Axis KeyToAxis(string key)
+            {
+                string[] subStrings = key.Split(' ');
+
+                if (subStrings.Length > 2)
+                {
+                    return ParseAxis(subStrings[2]);
+                }
+
+                return Axis.ENUM_NONE;
+            }
         }
 
         public struct Model
@@ -268,13 +280,17 @@ namespace UEUtils
             switch (component.ToLower())
             {
                 case "x":
+                case "X":
                     return Axis.X;
                 case "y":
+                case "Y":
                     return Axis.Y;
                 case "z":
+                case "Z":
                     return Axis.Z;
                 case "total":
                 case "t":
+                case "T":
                     return Axis.Total;
                 default:
                     throw new Exception("Axis: " + component + " is strange!");
