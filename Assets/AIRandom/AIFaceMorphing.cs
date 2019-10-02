@@ -27,12 +27,6 @@ public class AIFaceMorphing : MonoBehaviour
 
     private int m_currentEyeBrow = 3;
 
-    private void Awake()
-    {
-        m_FaceSMR = GetComponent<SkinnedMeshRenderer>();
-        m_BlendShapeCount = m_FaceSMR.sharedMesh.blendShapeCount;
-    }
-
     public void ResetBlendShape()
     {
         for (int i = 0; i < m_BlendShapeCount; i++)
@@ -282,6 +276,14 @@ public class AIFaceMorphing : MonoBehaviour
 
     private void Start()
     {
+        InitCharacter();
+    }
+
+    public void InitCharacter()
+    {
+        m_FaceSMR = GetComponent<SkinnedMeshRenderer>();
+        m_BlendShapeCount = m_FaceSMR.sharedMesh.blendShapeCount;
+
         var characterLoader = GetComponent<UECharacterLoader>();
 
         characterLoader.InitializeEditModeCharacter();
