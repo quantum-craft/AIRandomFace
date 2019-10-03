@@ -27,7 +27,7 @@ public class BSSerializerTest : MonoBehaviour
             var SMR = GetComponent<SkinnedMeshRenderer>();
             var mesh = SMR.sharedMesh;
 
-            mesh.ClearBlendShapes();
+            UEBlendShapeToJson.ClearBlendShapes(SMR);
 
             UEBlendShapeSerializer.SetBlendshapesData(mesh, bytes);
 
@@ -48,7 +48,18 @@ public class BSSerializerTest : MonoBehaviour
         var SMR = GetComponent<SkinnedMeshRenderer>();
 
         UEBlendShapeToJson.ClearBlendShapes(SMR);
+
         UEBlendShapeToJson.LoadBlendShapes(SMR);
+
+        var aiFaceMorph = GetComponent<AIFaceMorphing>();
+        aiFaceMorph.InitCharacter();
+    }
+
+    public void ClearBlendShape()
+    {
+        var SMR = GetComponent<SkinnedMeshRenderer>();
+
+        UEBlendShapeToJson.ClearBlendShapes(SMR);
 
         var aiFaceMorph = GetComponent<AIFaceMorphing>();
         aiFaceMorph.InitCharacter();
