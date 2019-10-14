@@ -42,7 +42,7 @@ inline half2 UVTranslation(half2 inUV, half positionX, half positionY)
 
 inline half2 UVScale(half2 inUV, half scaleX, half scaleY)
 {
-    return inUV * half2(scaleX, scaleY);
+    return inUV * half2(1 / scaleX, 1 / scaleY);
 }
 
 inline half2 UVRotation(half2 inUV, float2x2 rotationMatrix)

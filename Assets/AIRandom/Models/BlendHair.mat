@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BlendHair
+  m_Shader: {fileID: 4800000, guid: 8ec9a8f8374f26e4691133fa940b08f4, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TattooTex:
+        m_Texture: {fileID: 2, guid: 00000000000000000000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _TattooFlipX: 0
+    - _TattooFlipY: 0
+    - _TattooPositionX: 0
+    - _TattooPositionY: 0
+    - _TattooRotation: 0
+    - _TattooScaleX: 1
+    - _TattooScaleY: 2
+    - _blendAlpha: 1
+    - _brightness: 0.5
+    - _saturation: 1
+    m_Colors:
+    - _AtlasOffset: {r: 0.0761261, g: 107.07611, b: 0, a: 0}
+    - _AtlasWH: {r: 256, g: 256, b: 0, a: 0}
+    - _FaceWH: {r: 512, g: 512, b: 0, a: 0}
+    - _RectOffset: {r: 160.07613, g: 273.0761, b: 0, a: 0}
+    - _UVCenter: {r: 0.37890628, g: 0.51171875, b: 0, a: 0}
+    - _UVRegion: {r: 0.00029736757, g: 0.7575152, b: 0.41826606, a: 0.60517144}
+    - _blendColor: {r: 0, g: 0, b: 0, a: 1}

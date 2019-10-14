@@ -5,7 +5,7 @@
         _MainTex("Don't set, this is the face texture.", 2D) = "white" {}
         _TattooTex("Tattoo (RGBA)", 2D) = "white" {}
 
-        _blendColor ("BlendColor", Color) = (1,0,1,1)
+        _blendColor ("BlendColor", Color) = (0, 0, 0, 1)
 		_blendAlpha ("BlendAlpha", Range(0, 1)) = 1
 
         _saturation ("Saturation", Range(0, 1)) = 1
