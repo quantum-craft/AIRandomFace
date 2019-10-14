@@ -114,6 +114,12 @@ public class AIFaceMorphing : MonoBehaviour
 
         foreach (var key in map.Keys)
         {
+            if (key.Contains("tone ") || key.Contains("mouth03") || key.Contains("eyebrow02") || key.Contains("eyebrow03")
+                || key.Contains("eyeball")||key.Contains("eye Rotation"))
+            {
+                continue;
+            }
+           
             if (map[key][(int)UEBlendShapesUtils.Axis.X].Add >= 0 && map[key][(int)UEBlendShapesUtils.Axis.X].Sub >= 0)
             {
                 var v = characterLoader.BlendShapesController.GetValue(
@@ -194,8 +200,10 @@ public class AIFaceMorphing : MonoBehaviour
 
         foreach (var key in map.Keys)
         {
-            if (key.Contains("tone "))
+            if (key.Contains("tone ") || key.Contains("mouth03") || key.Contains("eyebrow02") || key.Contains("eyebrow03")
+                         || key.Contains("eyeball") || key.Contains("eye Rotation"))
             {
+                Debug.Log(key);
                 continue;
             }
 
