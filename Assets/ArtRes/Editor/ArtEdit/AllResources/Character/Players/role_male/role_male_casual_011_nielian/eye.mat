@@ -216,7 +216,7 @@ Material:
     - _irisStartUV: {r: -0, g: 0, b: 0, a: 0}
     - _irisTexInfo: {r: 3, g: 3, b: 1, a: 1}
     - _irisUVDir: {r: 1, g: 0, b: 0, a: 1}
-    - _iriscol: {r: 0.33962262, g: 0.30277675, b: 0.30277675, a: 1}
+    - _iriscol: {r: 1, g: 1, b: 1, a: 1}
     - _pupilStartUV: {r: 0, g: 0, b: 0, a: 0}
     - _pupilTexInfo: {r: 3, g: 3, b: 1, a: 1}
     - _pupilUVDir: {r: 1, g: 0, b: 0, a: 1}

@@ -34,15 +34,15 @@ Material:
     - _TattooPositionY: 0
     - _TattooRotation: 0
     - _TattooScaleX: 1
-    - _TattooScaleY: 2
+    - _TattooScaleY: 1
     - _blendAlpha: 1
     - _brightness: 0.5
     - _saturation: 1
     m_Colors:
-    - _AtlasOffset: {r: 0.0761261, g: 107.07611, b: 0, a: 0}
+    - _AtlasOffset: {r: 0, g: 200, b: 0, a: 0}
     - _AtlasWH: {r: 256, g: 256, b: 0, a: 0}
-    - _FaceWH: {r: 512, g: 512, b: 0, a: 0}
-    - _RectOffset: {r: 160.07613, g: 273.0761, b: 0, a: 0}
-    - _UVCenter: {r: 0.37890628, g: 0.51171875, b: 0, a: 0}
-    - _UVRegion: {r: 0.00029736757, g: 0.7575152, b: 0.41826606, a: 0.60517144}
+    - _FaceWH: {r: 1, g: 1, b: 0, a: 0}
+    - _RectOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _UVCenter: {r: 0.001953125, g: 0.7832031, b: 0, a: 0}
+    - _UVRegion: {r: 0, g: 0.00390625, b: 0.78125, a: 0.78515625}
     - _blendColor: {r: 0, g: 0, b: 0, a: 1}

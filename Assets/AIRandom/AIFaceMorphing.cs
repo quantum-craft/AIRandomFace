@@ -25,7 +25,8 @@ public class AIFaceMorphing : MonoBehaviour
     public string m_SaveFolderName = "AI_Data";
     public string m_LoadFolderName = "AI_Data_Load";
 
-    private int m_currentEyeBrow = 3;
+    private int m_currentEyeBrow = 0;
+    private int m_currentEyeColor = 0;
 
     public void ResetBlendShape()
     {
@@ -109,11 +110,11 @@ public class AIFaceMorphing : MonoBehaviour
         foreach (var key in map.Keys)
         {
             if (key.Contains("tone ") || key.Contains("mouth03") || key.Contains("eyebrow02") || key.Contains("eyebrow03")
-                || key.Contains("eyeball")||key.Contains("eye Rotation"))
+                || key.Contains("eyeball") || key.Contains("eye Rotation"))
             {
                 continue;
             }
-           
+
             if (map[key][(int)UEBlendShapesUtils.Axis.X].Add >= 0 && map[key][(int)UEBlendShapesUtils.Axis.X].Sub >= 0)
             {
                 var v = characterLoader.BlendShapesController.GetValue(
@@ -282,6 +283,20 @@ public class AIFaceMorphing : MonoBehaviour
         characterLoader.MakeupSystem.SetTextureState("eyebrow", m_currentEyeBrow);
     }
 
+    public void ChangeEyeColor()
+    {
+        var characterLoader = GetComponent<UECharacterLoader>();
+
+        var texCount = characterLoader.MakeupSystem.GetTextureCount("iris");
+
+        m_currentEyeColor++;
+        m_currentEyeColor %= texCount;
+
+
+        characterLoader.MakeupSystem.SetTextureState("iris", m_currentEyeColor);
+        // characterLoader.MakeupSystem.SetTextureState("iris", "_iriscol", new Color(0.0f, 0.0f, 1.0f, 1.0f));
+    }
+
     private void Start()
     {
         InitCharacter();
@@ -296,5 +311,6 @@ public class AIFaceMorphing : MonoBehaviour
 
         characterLoader.InitializeEditModeCharacter();
         characterLoader.MakeupSystem.SetTextureState("eyebrow", m_currentEyeBrow);
+        characterLoader.MakeupSystem.SetTextureState("iris", m_currentEyeColor);
     }
 }

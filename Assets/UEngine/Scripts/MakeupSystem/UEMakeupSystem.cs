@@ -77,6 +77,18 @@ public class UEMakeupSystem
         return SMRList;
     }
 
+    public int GetTextureCount(string name)
+    {
+        var material = GetMaterialData(name);
+
+        if (material == null)
+        {
+            return -1;
+        }
+
+        return GetTextureCount(material);
+    }
+
     public void SetTextureState(string name, int textureIndex)
     {
         var material = GetMaterialData(name);
@@ -547,6 +559,18 @@ public class UEMakeupSystem
         }
     }
 
+    private static int GetTextureCount(UECharacterData.MaterialData material)
+    {
+        if (material.m_SpriteAtlas != null)
+        {
+            return material.m_SpriteAtlas.spriteCount;
+        }
+        else
+        {
+            return material.m_TextureData.Length;
+        }
+    }
+
     public List<UECharacterCustomData.MakeupData> GetMakeupDataList()
     {
         List<UECharacterCustomData.MakeupData> outputDataList = new List<UECharacterCustomData.MakeupData>();
@@ -756,7 +780,7 @@ public class UEMakeupSystem
         {
             m_textureBackupSystem.Clear();
         }
-        if(m_makeupState != null)
+        if (m_makeupState != null)
         {
             m_makeupState.Reset();
         }
@@ -764,16 +788,16 @@ public class UEMakeupSystem
         {
             m_originalState.Reset();
         }
-        if(m_currentTexture != null)
+        if (m_currentTexture != null)
         {
             m_currentTexture.Release();
             m_currentTexture.Clear();
         }
-        if(m_bodyPartsSMRDict != null)
+        if (m_bodyPartsSMRDict != null)
         {
             m_bodyPartsSMRDict.Clear();
         }
-        if(m_dirtyStateDict != null)
+        if (m_dirtyStateDict != null)
         {
             m_dirtyStateDict.Clear();
         }
