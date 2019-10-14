@@ -87,12 +87,12 @@ Material:
     - _brightness: 0.5
     - _saturation: 0.931
     m_Colors:
-    - _AtlasOffset: {r: 0.0761261, g: 56.07611, b: 0, a: 0}
+    - _AtlasOffset: {r: 0.0761261, g: 107.07611, b: 0, a: 0}
     - _AtlasWH: {r: 256, g: 256, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FaceWH: {r: 512, g: 512, b: 0, a: 0}
-    - _RectOffset: {r: 148.07613, g: 281.0761, b: 0, a: 0}
-    - _UVCenter: {r: 0.41601565, g: 0.31054688, b: 0, a: 0}
-    - _UVRegion: {r: 0.00029736757, g: 0.83173394, b: 0.21904731, a: 0.40204644}
+    - _RectOffset: {r: 160.07613, g: 273.0761, b: 0, a: 0}
+    - _UVCenter: {r: 0.37890628, g: 0.51171875, b: 0, a: 0}
+    - _UVRegion: {r: 0.00029736757, g: 0.7575152, b: 0.41826606, a: 0.60517144}
     - _blendColor: {r: 0.13207549, g: 0.10528659, b: 0.10528659, a: 1}
