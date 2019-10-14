@@ -64,11 +64,11 @@ public class UECharacterLoader : MonoBehaviour
     {
         Debug.Log(gameObject.GetInstanceID() + ": Edit mode initialize");
 
-        if (m_initialized)
-        {
-            Debug.LogError(gameObject.name + " CharacterLoader already initialized!");
-            return;
-        }
+        //if (m_initialized)
+        //{
+        //    Debug.LogError(gameObject.name + " CharacterLoader already initialized!");
+        //    return;
+        //}
 
         InitializeCharacter();
 

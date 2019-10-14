@@ -7,6 +7,9 @@ using System.Text;
 
 public class UEBlendShapeSerializer
 {
+    // private const float thredshold = 1e-10f;
+    private const float thredshold = 0.0f;
+
     public static byte[] GetCompressedBlendshapesData(Mesh mesh)
     {
         Debug.Log("UEBlendshape: Get Compressed data");
@@ -38,10 +41,8 @@ public class UEBlendShapeSerializer
 
                 mesh.GetBlendShapeFrameVertices(blendShapeIndex, frameIndex, deltaVertices, deltaNormals, deltaTangents);
 
-                
-
                 int segmentCount = getSegmentCount(deltaVertices);
-                if(segmentCapacity < segmentCount)
+                if (segmentCapacity < segmentCount)
                 {
                     segmentStartList = new int[segmentCount];
                     segmentSizeList = new int[segmentCount];
@@ -76,7 +77,6 @@ public class UEBlendShapeSerializer
 
     private static int getSegmentCount(Vector3[] vectorList)
     {
-        const float thredshold = 1e-6f;
         int segmentCount = 0;
         bool isInSegment = false;
         int vertexCount = vectorList.Count();
@@ -100,7 +100,6 @@ public class UEBlendShapeSerializer
 
     private static void parseBlendShapeData(Vector3[] vectorList, int[] segmentStartList, int[] segmentSizeList)
     {
-        const float thredshold = 1e-6f;
         bool isInSegment = false;
         int segmentSize = 0;
         int vertexCount = vectorList.Count();
@@ -196,7 +195,7 @@ public class UEBlendShapeSerializer
 
             string blendShapeName = Encoding.ASCII.GetString(compressedData, pointer, endPointer - pointer);
             pointer = endPointer + 1;
-            
+
             int blendShapeFrameCount = BitConverter.ToInt32(compressedData, pointer);
             pointer += 4;
 
