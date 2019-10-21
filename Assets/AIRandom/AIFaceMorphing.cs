@@ -293,7 +293,11 @@ public class AIFaceMorphing : MonoBehaviour
         m_currentEyeColor %= texCount;
 
 
-        characterLoader.MakeupSystem.SetTextureState("iris", m_currentEyeColor);
+        var texName = characterLoader.MakeupSystem.SetTextureState("iris", m_currentEyeColor);
+        if (m_Message != null)
+        {
+            m_Message.text = "eye id: " + (m_currentEyeColor + 1) + ". " + texName;
+        }
         // characterLoader.MakeupSystem.SetTextureState("iris", "_iriscol", new Color(0.0f, 0.0f, 1.0f, 1.0f));
     }
 
@@ -311,6 +315,10 @@ public class AIFaceMorphing : MonoBehaviour
 
         characterLoader.InitializeEditModeCharacter();
         characterLoader.MakeupSystem.SetTextureState("eyebrow", m_currentEyeBrow);
-        characterLoader.MakeupSystem.SetTextureState("iris", m_currentEyeColor);
+        var texName = characterLoader.MakeupSystem.SetTextureState("iris", m_currentEyeColor);
+        if (m_Message != null)
+        {
+            m_Message.text = "eye id: " + (m_currentEyeColor + 1) + ". " + texName;
+        }
     }
 }

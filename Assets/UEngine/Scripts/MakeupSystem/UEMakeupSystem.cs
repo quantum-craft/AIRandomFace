@@ -89,8 +89,10 @@ public class UEMakeupSystem
         return GetTextureCount(material);
     }
 
-    public void SetTextureState(string name, int textureIndex)
+    public string SetTextureState(string name, int textureIndex)
     {
+        var textureName = "";
+
         var material = GetMaterialData(name);
         var state = m_makeupState.GetState(name);
         int originalIndex = int.MaxValue;
@@ -106,12 +108,16 @@ public class UEMakeupSystem
         {
             var texture = GetTextureData(material, textureIndex);
             state = m_makeupState.SetState(name, textureIndex);
+
+            textureName = texture.name;
         }
 
         if (originalIndex != textureIndex)
         {
             SetStateDirty(name, null);
         }
+
+        return textureName;
     }
 
     public void ClearTextureState(string name)
