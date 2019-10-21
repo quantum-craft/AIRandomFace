@@ -89,6 +89,18 @@ public class UEMakeupSystem
         return GetTextureCount(material);
     }
 
+    public int GetCurTexIndex(string name)
+    {
+        var state = m_makeupState.GetState(name);
+
+        if (state == null)
+        {
+            return -1;
+        }
+
+        return state.m_TextureIndex;
+    }
+
     public string SetTextureState(string name, int textureIndex)
     {
         var textureName = "";

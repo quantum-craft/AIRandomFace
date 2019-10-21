@@ -121,7 +121,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _irisTexture:
-        m_Texture: {fileID: 2800000, guid: b228d1db570e2554bbba894173afa511, type: 3}
+        m_Texture: {fileID: 2800000, guid: bfd428f2a540a47468dd8b6dcca18cd7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _pupilTexture:

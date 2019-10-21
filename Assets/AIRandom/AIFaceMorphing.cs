@@ -25,8 +25,14 @@ public class AIFaceMorphing : MonoBehaviour
     public string m_SaveFolderName = "AI_Data";
     public string m_LoadFolderName = "AI_Data_Load";
 
+    [Space(10)]
+    public string[] m_IgnoreKeys;
+
     private int m_currentEyeBrow = 0;
     private int m_currentEyeColor = 0;
+
+    private const string m_irisTypeName = "iris";
+
 
     public void ResetBlendShape()
     {
@@ -34,6 +40,9 @@ public class AIFaceMorphing : MonoBehaviour
         {
             m_FaceSMR.SetBlendShapeWeight(i, 0.0f);
         }
+
+        // Eye iris color
+        SetIrisColor(0);
     }
 
     public void SaveTex2File(string fileName)
@@ -74,6 +83,12 @@ public class AIFaceMorphing : MonoBehaviour
             var characterLoader = GetComponent<UECharacterLoader>();
             for (int i = 0; i < data.Names.Length; i++)
             {
+                if (data.Names[i] == "eyeiris Color")
+                {
+                    SetIrisColor((int)data.Values[i] - 1); // 1 based index
+                    continue;
+                }
+
                 var part = UEBlendShapesUtils.BlendShape.KeyToPart(data.Names[i]);
                 var operation = UEBlendShapesUtils.BlendShape.KeyToOperation(data.Names[i]);
                 var axis = UEBlendShapesUtils.BlendShape.KeyToAxis(data.Names[i]);
@@ -99,6 +114,19 @@ public class AIFaceMorphing : MonoBehaviour
         }
     }
 
+    private bool _shouldIgnore(string key, string[] ignoreKeys)
+    {
+        foreach (var keyToIgnore in ignoreKeys)
+        {
+            if (key.Contains(keyToIgnore))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void SavePart2Json(string fileName)
     {
         var characterLoader = GetComponent<UECharacterLoader>();
@@ -109,8 +137,8 @@ public class AIFaceMorphing : MonoBehaviour
 
         foreach (var key in map.Keys)
         {
-            if (key.Contains("tone ") || key.Contains("mouth03") || key.Contains("eyebrow02") || key.Contains("eyebrow03")
-                || key.Contains("eyeball") || key.Contains("eye Rotation"))
+
+            if (_shouldIgnore(key, m_IgnoreKeys))
             {
                 continue;
             }
@@ -168,6 +196,11 @@ public class AIFaceMorphing : MonoBehaviour
             }
         }
 
+        // Eye iris color
+        var curIdx = characterLoader.MakeupSystem.GetCurTexIndex(m_irisTypeName);
+        names.Add("eyeiris Color");
+        values.Add(curIdx + 1); // 1 based idx
+
         var data = new BlendShapeData
         {
             ShapeName = fileName,
@@ -195,8 +228,7 @@ public class AIFaceMorphing : MonoBehaviour
 
         foreach (var key in map.Keys)
         {
-            if (key.Contains("tone ") || key.Contains("mouth03") || key.Contains("eyebrow02") || key.Contains("eyebrow03")
-                         || key.Contains("eyeball") || key.Contains("eye Rotation"))
+            if (_shouldIgnore(key, m_IgnoreKeys))
             {
                 Debug.Log(key);
                 continue;
@@ -242,6 +274,12 @@ public class AIFaceMorphing : MonoBehaviour
                     v);
             }
         }
+
+        // Eye iris color
+        var texCount = characterLoader.MakeupSystem.GetTextureCount(m_irisTypeName);
+        var irisIdx = rnd.Next(0, texCount);
+
+        SetIrisColor(irisIdx);
     }
 
     public void StartRecordByPart(int count)
@@ -257,7 +295,7 @@ public class AIFaceMorphing : MonoBehaviour
             {
                 ResetBlendShape();
 
-                yield return 0; // save files in next frame
+                yield return new WaitForSeconds(0.05f);
 
                 SaveTex2File("face_" + i);
                 SavePart2Json("face_" + i);
@@ -266,7 +304,7 @@ public class AIFaceMorphing : MonoBehaviour
             {
                 RandomizedByPart();
 
-                yield return 0; // save files in next frame
+                yield return new WaitForSeconds(0.05f);
 
                 SaveTex2File("face_" + i);
                 SavePart2Json("face_" + i);
@@ -287,18 +325,13 @@ public class AIFaceMorphing : MonoBehaviour
     {
         var characterLoader = GetComponent<UECharacterLoader>();
 
-        var texCount = characterLoader.MakeupSystem.GetTextureCount("iris");
+        var texCount = characterLoader.MakeupSystem.GetTextureCount(m_irisTypeName);
 
         m_currentEyeColor++;
         m_currentEyeColor %= texCount;
 
-
-        var texName = characterLoader.MakeupSystem.SetTextureState("iris", m_currentEyeColor);
-        if (m_Message != null)
-        {
-            m_Message.text = "eye id: " + (m_currentEyeColor + 1) + ". " + texName;
-        }
-        // characterLoader.MakeupSystem.SetTextureState("iris", "_iriscol", new Color(0.0f, 0.0f, 1.0f, 1.0f));
+        SetIrisColor(m_currentEyeColor);
+        // characterLoader.MakeupSystem.SetTextureState(m_irisTypeName, "_iriscol", new Color(0.0f, 0.0f, 1.0f, 1.0f));
     }
 
     private void Start()
@@ -315,10 +348,20 @@ public class AIFaceMorphing : MonoBehaviour
 
         characterLoader.InitializeEditModeCharacter();
         characterLoader.MakeupSystem.SetTextureState("eyebrow", m_currentEyeBrow);
-        var texName = characterLoader.MakeupSystem.SetTextureState("iris", m_currentEyeColor);
+
+        SetIrisColor(0);
+    }
+
+    public void SetIrisColor(int texIdx)
+    {
+        m_currentEyeColor = texIdx;
+
+        var characterLoader = GetComponent<UECharacterLoader>();
+
+        var texName = characterLoader.MakeupSystem.SetTextureState(m_irisTypeName, m_currentEyeColor);
         if (m_Message != null)
         {
-            m_Message.text = "eye id: " + (m_currentEyeColor + 1) + ". " + texName;
+            m_Message.text = "eyeiris id: " + (m_currentEyeColor + 1) + ". " + texName;
         }
     }
 }

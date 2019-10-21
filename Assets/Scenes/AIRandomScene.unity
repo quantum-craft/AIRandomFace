@@ -2505,6 +2505,13 @@ MonoBehaviour:
   m_Message: {fileID: 833214212}
   m_SaveFolderName: AI_Data
   m_LoadFolderName: AI_Data_Load
+  m_IgnoreKeys:
+  - tone
+  - mouth03
+  - eyebrow02
+  - eyebrow03
+  - eyeball
+  - eye Rotation
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0

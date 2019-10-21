@@ -32,10 +32,17 @@ public class LoadDataNew : MonoBehaviour
                 Debug.Log("format wrong");
                 return;
             }
-            ResetBlendShape();
+
+            morphing.ResetBlendShape();
 
             for (int i = 0; i < data.Names.Length; i++)
             {
+                if (data.Names[i] == "eyeiris Color")
+                {
+                    morphing.SetIrisColor((int)data.Values[i] - 1); // 1 based index
+                    continue;
+                }
+
                 var part = UEBlendShapesUtils.BlendShape.KeyToPart(data.Names[i]);
                 var operation = UEBlendShapesUtils.BlendShape.KeyToOperation(data.Names[i]);
                 var axis = UEBlendShapesUtils.BlendShape.KeyToAxis(data.Names[i]);
@@ -65,22 +72,13 @@ public class LoadDataNew : MonoBehaviour
             {
                 filename = filename.Substring(0, filename.Length - 5);
                 Debug.Log(filename);
+
                 LoadJson2PartNew(filename);
-                yield return null;
+                yield return new WaitForSeconds(0.05f);
+
                 morphing.SaveTex2File(filename);
-                yield return null;
+                // yield return new WaitForSeconds(0.05f);
             }
         }
     }
-
-    public void ResetBlendShape()
-    {
-        for (int i = 0; i < smr.sharedMesh.blendShapeCount; i++)
-        {
-            smr.SetBlendShapeWeight(i, 0.0f);
-        }
-    }
-
-  
-
 }
