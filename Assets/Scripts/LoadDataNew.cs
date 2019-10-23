@@ -43,6 +43,12 @@ public class LoadDataNew : MonoBehaviour
                     continue;
                 }
 
+                if (data.Names[i] == "faceskin Color")
+                {
+                    morphing.SetFaceSkinColor((int)data.Values[i] - 1); // 1 based index
+                    continue;
+                }
+
                 var part = UEBlendShapesUtils.BlendShape.KeyToPart(data.Names[i]);
                 var operation = UEBlendShapesUtils.BlendShape.KeyToOperation(data.Names[i]);
                 var axis = UEBlendShapesUtils.BlendShape.KeyToAxis(data.Names[i]);

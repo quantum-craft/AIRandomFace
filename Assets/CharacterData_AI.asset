@@ -17,24 +17,43 @@ MonoBehaviour:
     m_BodyPartName: mesh_role_male_casual_02_face_lod0
     m_MaterialIndex: 0
     m_ReplaceTextureName: _Diffuse
-    m_Mode: 0
-    m_BlendMaterial: {fileID: 2100000, guid: a17ef17c228b1134dbfbb1747c4ebb08, type: 2}
-    m_SpriteAtlas: {fileID: 4343727234628468602, guid: 0b9d1624a4dc65344a290ce4d7a49392,
-      type: 2}
+    m_Mode: 1
+    m_BlendMaterial: {fileID: 0}
+    m_SpriteAtlas: {fileID: 0}
     m_StringData:
     - default
     - male_base_dif 2
     - male_base_dif 2
-    m_TextureData: []
+    m_TextureData:
+    - {fileID: 2800000, guid: b890450a886fea841b9989ab56f2d866, type: 3}
+    - {fileID: 2800000, guid: 62a70d5d3b6f6c4418c20630fa8d933b, type: 3}
+    - {fileID: 2800000, guid: e22feb82656c7fa46a31929a63658a32, type: 3}
+    - {fileID: 2800000, guid: 3602d13596c92c940961daa05882072f, type: 3}
+    - {fileID: 2800000, guid: 867597622a25e9f43b0a6ef41ae0e4f4, type: 3}
+    - {fileID: 2800000, guid: d18a6a027b841d542903811bad1565b3, type: 3}
+    - {fileID: 2800000, guid: 0c5d2bc0f9ed42a48891d431c8a394bc, type: 3}
+    - {fileID: 2800000, guid: 4ae56ac50db9dad429c9580f2b2963e5, type: 3}
+    - {fileID: 2800000, guid: 19f0e114700e2264490fa24198394291, type: 3}
+    - {fileID: 2800000, guid: da17c19200235d746869de7cb7f59a97, type: 3}
+    - {fileID: 2800000, guid: f744ae31cf2659445849574a3ff429de, type: 3}
+    - {fileID: 2800000, guid: 7b748dab1d340274694cef4d0c3fea01, type: 3}
+    - {fileID: 2800000, guid: 693481bf5268f9e4f8999c4195201eec, type: 3}
+    - {fileID: 2800000, guid: 97fe523c7513b344e8b88b19a544bbc9, type: 3}
+    - {fileID: 2800000, guid: 2041e160db6df704dbed9d15f5e71ef8, type: 3}
+    - {fileID: 2800000, guid: a7655e5470fc77e4fb910593b2c47211, type: 3}
+    - {fileID: 2800000, guid: 4ee8e5dec54266e479bee3c6a05e4348, type: 3}
+    - {fileID: 2800000, guid: e1ca50715e4cce240bd7407aa3725828, type: 3}
+    - {fileID: 2800000, guid: dcb643c673842814587ba778f40c6da2, type: 3}
+    - {fileID: 2800000, guid: 19f254a137b57d746bc721f1313f9d7c, type: 3}
+    - {fileID: 2800000, guid: cad2c0aee8a766c42ac1ff44e8fb705e, type: 3}
     m_BatchedMaterial: {fileID: 0}
   - m_TypeName: tattoo
     m_BodyPartName: mesh_role_male_casual_02_face_lod0
     m_MaterialIndex: 0
     m_ReplaceTextureName: _Diffuse
-    m_Mode: 0
-    m_BlendMaterial: {fileID: 2100000, guid: 184b57f227504e24dbbbd0786e844f77, type: 2}
-    m_SpriteAtlas: {fileID: 4343727234628468602, guid: f121c0eae67f5d84c894ee6ba9c37633,
-      type: 2}
+    m_Mode: 1
+    m_BlendMaterial: {fileID: 0}
+    m_SpriteAtlas: {fileID: 0}
     m_StringData:
     - default
     - Tattoo1
@@ -47,10 +66,9 @@ MonoBehaviour:
     m_BodyPartName: mesh_role_male_casual_02_face_lod0
     m_MaterialIndex: 0
     m_ReplaceTextureName: _Diffuse
-    m_Mode: 0
-    m_BlendMaterial: {fileID: 2100000, guid: a7ba596bb09d7e0479ff50438b81b45c, type: 2}
-    m_SpriteAtlas: {fileID: 4343727234628468602, guid: f8dc0bcb9c7135c41b315a6e10ce2dd2,
-      type: 2}
+    m_Mode: 1
+    m_BlendMaterial: {fileID: 0}
+    m_SpriteAtlas: {fileID: 0}
     m_StringData:
     - default
     - blusher1

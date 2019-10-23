@@ -30,8 +30,10 @@ public class AIFaceMorphing : MonoBehaviour
 
     private int m_currentEyeBrow = 0;
     private int m_currentEyeColor = 0;
+    private int m_currentSkinColor = 0;
 
-    private const string m_irisTypeName = "iris";
+    private const string m_irisTypeName = "iris"; // iris
+    private const string m_skincolorTypeName = "skincolor";
 
 
     public void ResetBlendShape()
@@ -43,6 +45,9 @@ public class AIFaceMorphing : MonoBehaviour
 
         // Eye iris color
         SetIrisColor(0);
+
+        // Face Skin color
+        SetFaceSkinColor(0);
     }
 
     public void SaveTex2File(string fileName)
@@ -86,6 +91,12 @@ public class AIFaceMorphing : MonoBehaviour
                 if (data.Names[i] == "eyeiris Color")
                 {
                     SetIrisColor((int)data.Values[i] - 1); // 1 based index
+                    continue;
+                }
+
+                if (data.Names[i] == "faceskin Color")
+                {
+                    SetFaceSkinColor((int)data.Values[i] - 1); // 1 based index
                     continue;
                 }
 
@@ -201,6 +212,11 @@ public class AIFaceMorphing : MonoBehaviour
         names.Add("eyeiris Color");
         values.Add(curIdx + 1); // 1 based idx
 
+        // Face skin color
+        curIdx = characterLoader.MakeupSystem.GetCurTexIndex(m_skincolorTypeName);
+        names.Add("faceskin Color");
+        values.Add(curIdx + 1); // 1 based idx
+
         var data = new BlendShapeData
         {
             ShapeName = fileName,
@@ -278,8 +294,12 @@ public class AIFaceMorphing : MonoBehaviour
         // Eye iris color
         var texCount = characterLoader.MakeupSystem.GetTextureCount(m_irisTypeName);
         var irisIdx = rnd.Next(0, texCount);
-
         SetIrisColor(irisIdx);
+
+        // Eye iris color
+        texCount = characterLoader.MakeupSystem.GetTextureCount(m_skincolorTypeName);
+        var faceColorIdx = rnd.Next(0, texCount);
+        SetFaceSkinColor(faceColorIdx);
     }
 
     public void StartRecordByPart(int count)
@@ -334,6 +354,18 @@ public class AIFaceMorphing : MonoBehaviour
         // characterLoader.MakeupSystem.SetTextureState(m_irisTypeName, "_iriscol", new Color(0.0f, 0.0f, 1.0f, 1.0f));
     }
 
+    public void ChangeFaceSkinColor()
+    {
+        var characterLoader = GetComponent<UECharacterLoader>();
+
+        var texCount = characterLoader.MakeupSystem.GetTextureCount(m_skincolorTypeName);
+
+        m_currentSkinColor++;
+        m_currentSkinColor %= texCount;
+
+        SetFaceSkinColor(m_currentSkinColor);
+    }
+
     private void Start()
     {
         InitCharacter();
@@ -362,6 +394,19 @@ public class AIFaceMorphing : MonoBehaviour
         if (m_Message != null)
         {
             m_Message.text = "eyeiris id: " + (m_currentEyeColor + 1) + ". " + texName;
+        }
+    }
+
+    public void SetFaceSkinColor(int texIdx)
+    {
+        m_currentSkinColor = texIdx;
+
+        var characterLoader = GetComponent<UECharacterLoader>();
+
+        var texName = characterLoader.MakeupSystem.SetTextureState(m_skincolorTypeName, m_currentSkinColor);
+        if (m_Message != null)
+        {
+            m_Message.text = "faceskin id: " + (m_currentSkinColor + 1) + ". " + texName;
         }
     }
 }
